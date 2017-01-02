@@ -7,7 +7,7 @@ $(window).on("load", function() {
         setTimeout(function() {
             $(".typed").typed({
                 //And I love
-                strings: ['<a href="https://soundcloud.com/john-lensing-213121142">Soundcloud</a> ^500| <a href="">Shows</a> ^500 | <span style="color:red">Fall in Love</span> ^500 | <a href="">Contact</a>'],
+                strings: ['<a href="#/music">Music</a> ^150| <a href="#/shows">Shows</a> ^150 | <a href="#/lyrics">Lyrics</a> ^150 | <a href="#/contact">Contact</a>'],
                 typeSpeed: 70,
                 backDelay: 700,
                 loop: false,
@@ -23,3 +23,14 @@ $(window).on("load", function() {
 });
 console.info('hello world!')
 $('.hero_carrot').css('display', 'none');
+
+
+function scrollToID(id) {
+    var e = $(id);
+    $('body, html').animate({
+        scrollTop: e.offset().top + (e.data('offset') || 0)
+    }, {
+        duration: 250,
+        queue: false
+    }, 'easeInOutCubic');
+}

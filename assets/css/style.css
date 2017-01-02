@@ -107,22 +107,28 @@
     bottom: 0;
     right: 50%;
 }
+
 .hero_carrot .material-icons {
-  font-size:64px;
+    font-size: 64px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Reem Kufi', sans-serif;
 }
 
 
 /* typed.js */
 
 .typed a {
-  color: white;
+    color: white;
+    text-decoration: underline;
 }
+
 .typed a:hover {
     color: #56c8ff;
     text-decoration: underline;
     cursor: pointer;
 }
-
 
 .typed-cursor {
     opacity: 1;
@@ -185,6 +191,10 @@
     left: 30px;
     font-size: 102px;
     font-family: 'Reem Kufi', sans-serif;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 .me_typed {
@@ -222,16 +232,6 @@ kbd {
     text-shadow: 0 1px 0 #fff;
     line-height: 1.4;
     white-space: nowrap;
-}
-
-.typed-footer>a {
-    color: white;
-}
-
-.typed-footer>a:hover {
-    color: #039be5;
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 .copyright {}
