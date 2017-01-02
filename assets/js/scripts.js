@@ -13,6 +13,7 @@ $(window).on("load", function() {
                 loop: false,
                 callback: function() {
                     $('.typed').parent().children('.typed-cursor').delay(1500).fadeOut('slow');
+                    $('.hero_carrot').delay(1000).fadeIn('slow');
                 }
             });
         }, 1000);
@@ -21,3 +22,4 @@ $(window).on("load", function() {
 
 });
 console.info('hello world!')
+$('.hero_carrot').css('display', 'none');

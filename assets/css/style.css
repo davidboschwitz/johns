@@ -102,12 +102,27 @@
     width: 85%;
 }
 
+.hero_carrot {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+}
+.hero_carrot .material-icons {
+  font-size:64px;
+}
+
 
 /* typed.js */
 
 .typed a {
   color: white;
 }
+.typed a:hover {
+    color: #56c8ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 
 .typed-cursor {
     opacity: 1;
