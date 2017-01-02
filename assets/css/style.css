@@ -116,6 +116,19 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Reem Kufi', sans-serif;
 }
 
+/* Social */
+.social {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  background: #e0e0e0;
+  padding: 3px;
+  border-radius: 4px;
+  font-size: 28px;
+}
+
+
 
 /* typed.js */
 
