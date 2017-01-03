@@ -116,24 +116,26 @@ h1, h2, h3, h4, h5, h6, .card-title {
     font-family: 'Reem Kufi', sans-serif;
 }
 
+
 /* Social */
+
 .social {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  background: #e0e0e0;
-  padding: 3px;
-  border-radius: 4px;
-  font-size: 28px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background: #e0e0e0;
+    padding: 3px;
+    border-radius: 4px;
+    font-size: 28px;
 }
 
 * {
-  font-family: 'Muli';
+    font-family: 'Muli';
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 
@@ -211,10 +213,7 @@ a:hover {
     left: 30px;
     font-size: 102px;
     font-family: 'Reem Kufi', sans-serif;
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+    margin-bottom: 0.67em;
 }
 
 .me_typed {
