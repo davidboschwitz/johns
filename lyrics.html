@@ -1,1 +1,20 @@
 <h1>Lyrics</h1>
+<div class="row">
+    <div class="col s3">
+        <ul class="collection" style="font-family: 'Reem Kufi', sans-serif;">
+            <li class="collection-item" ng-repeat="lyric in data.lyrics" ng-class="[selectedLyric.title == lyric.title ? 'dblb' : '']" ng-click="select(lyric)">{{lyric.title}}</li>
+        </ul>
+    </div>
+
+    <div class="col s9 card" style="text-align:center">
+
+        <h5>{{selectedLyric.title}}</h5>
+
+        <div ng-bind-html="selectedLyric.text | newline"></div>
+    </div>
+</div>
+<style>
+.dblb{
+background-color: #56c8ff !important;
+}
+</style>

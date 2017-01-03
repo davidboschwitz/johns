@@ -1,0 +1,93 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="container" ng-app="johnsApp" ng-controller="editLyricsController">
+        <h1>Edit Shows</h1>
+        <div class="card" ng-repeat="show in data.shows">
+            <div class="card-content">
+                <div class="input-field col s12">
+                    <input id="title_{{$index}}" type="text" ng-model="show.title">
+                    <label for="title_{{$index}}">Title</label>
+                </div>
+                <div class="col s12">
+                    <b>Date &amp; Time:</b>
+                    <input type="text" ng-model="show.time" />
+                </div>
+                <div class="col s12">
+                    <b>Description:</b>
+                    <textarea ng-model="show.description"></textarea>
+                </div><br/><br/><br/><hr/>
+                <b>Links:</b>
+                        <div ng-repeat="link in show.links">
+                        <div class="card">
+                            <div class="card-content">
+                            <div class="col s10">
+
+                                <div class="input-field col s6">
+                                    <input id="title_{{$index}}" type="text" ng-model="link.title">
+                                    <label for="title_{{$index}}">Title</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="url_{{$index}}" type="text" ng-model="link.url">
+                                    <label for="url_{{$index}}">URL</label>
+                                </div>
+                            </div>
+                            <div class="col s2">
+                                <button ng-click="show.links.splice($index, 1)" class="waves-effect waves-light btn red">DEL</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button ng-click="show.links.push({});" class="waves-effect waves-light btn btn-xs">Add link</button>
+<br/><br/><br/><br/><br/><br/><hr/>
+                <button ng-click="data.shows.splice($index, 1)" class="waves-effect waves-light btn red">DEL</button>
+            </div>
+        </div>
+        <button ng-click="data.shows.push({links:[]});" class="waves-effect waves-light btn">Add show</button>
+        <button ng-click="save(data)" class="waves-effect waves-light btn">Save</button>
+        <button ng-click="dbg(data)" class="waves-effect waves-light btn">DBG</button>
+    </div>
+    <!--Import jQuery before materialize.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+    <script>
+        angular.module('johnsApp', []).controller('editLyricsController', function($scope, $http) {
+            $scope.dbg = function(e) {
+                console.log(angular.toJson(e))
+            };
+            $scope.save = function(data) {
+                $http({
+                    method: 'POST',
+                    url: 'post.php?p=shows',
+                    data: 'data=' + angular.toJson(data),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+
+                }).success(function(res) {
+                    alert(res);
+                }).error(function(error) {
+                    alert(error);
+                });
+
+            };
+            $scope.data = {
+                shows: []
+            };
+            $http.get('shows.json').then(function(res) {
+                console.log(res)
+                $scope.data = res.data;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
