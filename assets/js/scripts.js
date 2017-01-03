@@ -27,6 +27,17 @@ $(window).on("load", function() {
 
 
 });
+
+
+$(window).resize(function() {
+    console.log('window was resized');
+    //set the height of the hero image to the height of the browser.
+    $('.hero').height(window.innerHeight);
+    $('.full-height').each(function(i, _e) {
+        var e = $(_e);
+        e.css('height', window.innerHeight + (e.data('heightoffset') || 0));
+    });
+});
 console.info('hello world!')
 $('.hero_carrot').css('display', 'none');
 
