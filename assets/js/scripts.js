@@ -1,9 +1,10 @@
 //fade in from the preloader with a little delay
 $(window).on("load", function() {
     console.log('loaded');
+    $('.hero').height(window.innerHeight);
     $('.full-height').each(function(i, _e) {
         var e = $(_e);
-        e.css('height', window.innerHeight + (e.data('heightoffset') || 0));
+        e.css('min-height', window.innerHeight + (e.data('heightoffset') || 0));
     });
     setTimeout(function() {
         $('body').addClass('loaded');
