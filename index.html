@@ -103,17 +103,24 @@ limitations under the License.
         </div>
     </div>
 
+    <div style="display:none">
+
+    </div>
+
     <div class="social z-depth-2">
         <a href="https://soundcloud.com/john-lensing-213121142"><i class="fa fa-soundcloud" style="color:#f50"></i></a>
-        <a href="#" onclick="alert('not yet implemented')"><i class="fa fa-youtube-play" style="color:red"></i></a>
+        <a href="#" onclick="Materialize.toast(youtubeComingSoon,5000)"><i class="fa fa-youtube-play" style="color:red"></i></a>
         <a href="https://twitter.com/JLensingmusic"><i class="fa fa-twitter" style="color:#00acee"></i></a>
-        <a href="https://www.facebook.com/johnlensingmusic/"><i class="fa fa-facebook-square" style="color:#78a4ff"></i></a>
+        <a href="https://www.facebook.com/johnlensingmusic/"><i class="fa fa-facebook-square" style="color:#597dc7"></i></a>
         <a href="https://www.instagram.com/johnlensingmusic/ "><i class="fa fa-instagram" style="color:#444"></i></a>
     </div>
 
-    <div id="page-wrapper" style="background: url(assets/img/bg-spots.png);">
+    <div id="page-wrapper" style="background: url(assets/img/bg-spots.png); padding-top: 2.1rem;">
         <div id="page-content" class="container full-height" data-heightoffset="-200">
             <div ng-view />
+        </div>
+        <div class="footer" style="text-align:center;">
+          &copy; &amp; <span style="color:red">&hearts;</span> John Lensing - Site made by <a href="http://david.boschwitz.me" target="_blank">David Boschwitz</a>
         </div>
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -168,6 +175,7 @@ limitations under the License.
         //     s.setAttribute('src', 'assets/js/analytics.js');
         //     document.body.appendChild(s);
         // }
+        var youtubeComingSoon = $('<div class="toast" style="position:fixed; top:45px; right:10px">Youtube coming soon...</div>');
     </script>
 </body>
 
