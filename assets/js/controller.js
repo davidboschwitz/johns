@@ -1,4 +1,4 @@
-angular.module('johnsApp', ['ngRoute']) //ngRoute is an angular service
+angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an angular service
     .config(function($routeProvider) {
         $routeProvider.when("/contact", {
             controller: "contactController",
@@ -63,7 +63,16 @@ angular.module('johnsApp', ['ngRoute']) //ngRoute is an angular service
 })
 
 .controller('showsController', function($scope, goto) {
-  console.log('changed to shows page')
+  console.log('changed to shows page');
+  $scope.data = {};
+  $scope.data.events = [
+    {
+      title:'First Avenue',
+      description: 'yayayay',
+      time: '1/1 5pm',
+      location: 'First Ave'
+    }
+  ]
 })
 
 .controller('musicController', function($scope, goto) {

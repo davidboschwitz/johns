@@ -87,42 +87,15 @@ Passionate about technology and the outdoors, and hungry to learn more." />
 </head>
 
 <body class="anchor" style="margin:0" ng-app="johnsApp" ng-controller="indexController">
-    <!-- <div class="preloader-background">
-    	<div class="preloader-wrapper big active">
-    		<div class="spinner-layer spinner-blue-only">
-    			<div class="circle-clipper left">
-    				<div class="circle"></div>
-    			</div>
-    			<div class="gap-patch">
-    				<div class="circle"></div>
-    			</div>
-    			<div class="circle-clipper right">
-    				<div class="circle"></div>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    <div> -->
+
     <div id="loader-wrapper">
         <h1 style="font-weight:100;" class="me_name loading_name load-fade-in">John Lensing</h1>
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
-    <!--<header>
-      <nav>
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo">Materialize</a>
-            <ul class="right side-nav" id="nav-mobile">
-              <li class="hide-on-small-only"><a href="parallax.html"><i class="mdi-navigation-arrow-back"></i></a></li>
-            </ul>
-            <a class="button-collapse" href="#" data-activates='nav-mobile'><i class="mdi-navigation-menu"></i></a>
-          </div>
-        </div>
-      </nav>
-    </header>-->
-    <div class="hero full-height">
+
+    <div class="hero full-height" style="box-shadow: 0 5px 5px -2px grey;">
         <div class="hero-text">
             <h1 style="font-weight:100;" class="me_name">John Lensing</h1>
             <div style="font-weight:300;font-size:24px;padding-left:5px;" class="me_typed"><span class="typed"></span></div>
@@ -138,8 +111,10 @@ Passionate about technology and the outdoors, and hungry to learn more." />
         <a href="https://www.instagram.com/johnlensingmusic/ "><i class="fa fa-instagram" style="color:#444"></i></a>
     </div>
 
-    <div id="page-content" class="container">
-        <div ng-view />
+    <div id="page-wrapper" style="background: url(assets/img/bg-spots.png);">
+        <div id="page-content" class="container full-height">
+            <div ng-view />
+        </div>
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
@@ -148,6 +123,8 @@ Passionate about technology and the outdoors, and hungry to learn more." />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+    <link rel='stylesheet' href='assets/css/loading-bar.css' type='text/css' media='all' />
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
     <script src="assets/js/controller.js"></script>
     <!-- <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>-->
     <script type="text/javascript" src="assets/js/typed.js"></script>

@@ -8,18 +8,20 @@ $(window).on("load", function() {
             $(".typed").typed({
                 //And I love
                 strings: ['<a href="#/music">Music</a> ^150| <a href="#/shows">Shows</a> ^150 | <a href="#/lyrics">Lyrics</a> ^150 | <a href="#/contact">Contact</a>'],
-                typeSpeed: 70,
+                typeSpeed: 40,
                 backDelay: 700,
                 loop: false,
                 callback: function() {
-                    $('.typed').parent().children('.typed-cursor').delay(1500).fadeOut('slow');
+                    $('.typed').parent().children('.typed-cursor').css('display','none')//.delay(1500).fadeOut('slow');
                     $('.hero_carrot').delay(1000).fadeIn('slow');
                 }
             });
         }, 1000);
     }, 1000)
 
-
+    $('.typed').children('a').click(function(){
+      scrollTo(0,  window.innerHeight - 200);
+    });
 });
 console.info('hello world!')
 $('.hero_carrot').css('display', 'none');
