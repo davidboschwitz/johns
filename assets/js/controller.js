@@ -68,8 +68,8 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     .controller('lyricsController', function($scope, $http) {
         console.log('changed to lyrics page');
         $scope.selectedLyric = {
-            text: ''
-            ,title:'Please select a song'
+            text: '',
+            title: 'Please select a song'
         };
         $http.get('https://vps.boschwitz.me/johns/backend/get.php?p=lyrics').then(function(res) {
             console.log(res)
