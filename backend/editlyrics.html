@@ -5,8 +5,8 @@
 
 <body>
     <div class="container" ng-app="johnsApp" ng-controller="editLyricsController">
-        <h1>Edit Lyrics</h1>
-        <div class="card" ng-repeat="lyric in data.lyrics">
+        <h1>Edit Lyrics <small style="font-size:20px;"><a href="editshows.html">Edit Shows</a></small></h1>
+        <div class="card row" ng-repeat="lyric in data.lyrics">
             <div class="card-content">
                 <div class="input-field col s12">
                     <input id="title_{{$index}}" type="text" ng-model="lyric.title">
@@ -16,12 +16,12 @@
                     <b>Lyrics:</b>
                     <textarea ng-model="lyric.text"></textarea>
                 </div>
-                <button ng-click="data.lyrics.splice($index, 1)" class="waves-effect waves-light btn red">DEL</button>
+                <button ng-click="data.lyrics.splice($index, 1)" class="waves-effect waves-light btn red">Delete Song</button>
             </div>
         </div>
         <button ng-click="data.lyrics.push({});" class="waves-effect waves-light btn">Add Song</button>
         <button ng-click="save(data)" class="waves-effect waves-light btn">Save</button>
-        <button ng-click="console.log(angular.toJson(data))" class="waves-effect waves-light btn">DBG</button>
+        <!-- <button ng-click="console.log(angular.toJson(data))" class="waves-effect waves-light btn">DBG</button> -->
     </div>
     <!--Import jQuery before materialize.js-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -31,7 +31,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
     <script>
-        angular.module('johnsApp', []).controller('editLyricsController', function($scope, $http) {
+        angular.module('johnsApp', []).controller('editLyricsController', function($scope, $http, $timeout) {
             $scope.save = function(data) {
                 $http({
                     method: 'POST',
@@ -48,12 +48,31 @@
                 });
 
             };
+
+            $scope.moveUp = function(i){
+              if(i <= 0)
+                return;
+              var tmp = $scope.data.lyrics[i - 1];
+              $scope.data.lyrics[i - 1] = $scope.data.lyrics[i];
+              $scope.data.lyrics[i] = tmp;
+            }
+
+            $scope.moveDown = function(i){
+              if(i >= $scope.data.lyrics.length)
+                return;
+              var tmp = $scope.data.lyrics[i + 1];
+              $scope.data.lyrics[i + 1] = $scope.data.lyrics[i];
+              $scope.data.lyrics[i] = tmp;
+            }
+
+
             $scope.data = {
                 lyrics: []
             };
             $http.get('lyrics.json').then(function(res) {
                 console.log(res)
                 $scope.data = res.data;
+                $timeout(Materialize.updateTextFields, 500);
             });
 
         });

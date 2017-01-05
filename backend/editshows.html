@@ -1,54 +1,63 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="container" ng-app="johnsApp" ng-controller="editLyricsController">
-        <h1>Edit Shows</h1>
-        <div class="card" ng-repeat="show in data.shows">
+        <h1>Edit Shows <small style="font-size:20px;"><a href="editlyrics.html">Edit Lyrics</a></small></h1>
+        <div class="card row" ng-repeat="show in data.shows">
             <div class="card-content">
-                <div class="input-field col s12">
-                    <input id="title_{{$index}}" type="text" ng-model="show.title">
-                    <label for="title_{{$index}}">Title</label>
-                </div>
-                <div class="col s12">
-                    <b>Date &amp; Time:</b>
-                    <input type="text" ng-model="show.time" />
-                </div>
-                <div class="col s12">
-                    <b>Description:</b>
-                    <textarea ng-model="show.description"></textarea>
-                </div><br/><br/><br/><hr/>
-                <b>Links:</b>
-                        <div ng-repeat="link in show.links">
-                        <div class="card">
-                            <div class="card-content">
-                            <div class="col s10">
-
-                                <div class="input-field col s6">
-                                    <input id="title_{{$index}}" type="text" ng-model="link.title">
-                                    <label for="title_{{$index}}">Title</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input id="url_{{$index}}" type="text" ng-model="link.url">
-                                    <label for="url_{{$index}}">URL</label>
-                                </div>
-                            </div>
-                            <div class="col s2">
-                                <button ng-click="show.links.splice($index, 1)" class="waves-effect waves-light btn red">DEL</button>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="title_{{$index}}" type="text" ng-model="show.title">
+                        <label for="title_{{$index}}">Title</label>
+                    </div>
+                    <div class="col s12 input-field">
+                        <input id="time_{{$index}}" type="text" ng-model="show.time">
+                        <label for="time_{{$index}}">Date &amp; Time</label>
+                    </div>
+                    <div class="col s12">
+                        <b>Description:</b>
+                        <textarea ng-model="show.description"></textarea>
                     </div>
                 </div>
-                <button ng-click="show.links.push({});" class="waves-effect waves-light btn btn-xs">Add link</button>
-<br/><br/><br/><br/><br/><br/><hr/>
-                <button ng-click="data.shows.splice($index, 1)" class="waves-effect waves-light btn red">DEL</button>
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <div class="card-title">Links:</div>
+                        <div ng-repeat="link in show.links">
+                            <div class="card" style="background-color:#e7eaeb;">
+                                <div class="card-content row white-text">
+                                    <div class="col s10">
+                                        <div class="input-field col s6">
+                                            <input id="title_{{$index}}" type="text" ng-model="link.title">
+                                            <label for="title_{{$index}}">Title</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="url_{{$index}}" type="text" ng-model="link.url">
+                                            <label for="url_{{$index}}">URL</label>
+                                        </div>
+                                    </div>
+                                    <div class="col s2">
+                                        <button ng-click="show.links.splice($index, 1)" class="waves-effect waves-light btn red"><i class="material-icons">delete</i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button ng-click="show.links.push({});" class="waves-effect waves-light btn btn-xs">Add link</button>
+                    </div>
+                </div>
+                <button ng-click="data.shows.splice($index, 1)" class="waves-effect waves-light btn red">Delete Show</button>
+                <button ng-click="moveUp($index)" class="waves-effect waves-light btn blue"><i class="material-icons">keyboard_arrow_up</i></button>
+                <button ng-click="moveDown($index)" class="waves-effect waves-light btn blue"><i class="material-icons">keyboard_arrow_down</i></button>
             </div>
         </div>
         <button ng-click="data.shows.push({links:[]});" class="waves-effect waves-light btn">Add show</button>
         <button ng-click="save(data)" class="waves-effect waves-light btn">Save</button>
-        <button ng-click="dbg(data)" class="waves-effect waves-light btn">DBG</button>
+        <!-- <button ng-click="dbg(data)" class="waves-effect waves-light btn">DBG</button> -->
     </div>
     <!--Import jQuery before materialize.js-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -58,7 +67,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
     <script>
-        angular.module('johnsApp', []).controller('editLyricsController', function($scope, $http) {
+        angular.module('johnsApp', []).controller('editLyricsController', function($scope, $http, $timeout) {
             $scope.dbg = function(e) {
                 console.log(angular.toJson(e))
             };
@@ -78,12 +87,31 @@
                 });
 
             };
+
+            $scope.moveUp = function(i) {
+                if (i <= 0)
+                    return;
+                var tmp = $scope.data.shows[i - 1];
+                $scope.data.shows[i - 1] = $scope.data.shows[i];
+                $scope.data.shows[i] = tmp;
+            }
+
+            $scope.moveDown = function(i) {
+                if (i >= $scope.data.shows.length)
+                    return;
+                var tmp = $scope.data.shows[i + 1];
+                $scope.data.shows[i + 1] = $scope.data.shows[i];
+                $scope.data.shows[i] = tmp;
+            }
+
+            //init
             $scope.data = {
                 shows: []
             };
             $http.get('shows.json').then(function(res) {
                 console.log(res)
                 $scope.data = res.data;
+                $timeout(window.Materialize.updateTextFields, 500);
             });
 
         });
