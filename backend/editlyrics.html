@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -14,13 +16,18 @@
                 </div>
                 <div class="col s12">
                     <b>Lyrics:</b>
-                    <textarea ng-model="lyric.text"></textarea>
+                    <textarea ng-model="lyric.text" style="height:200px; text-align:center;"></textarea>
                 </div>
-                <button ng-click="data.lyrics.splice($index, 1)" class="waves-effect waves-light btn red">Delete Song</button>
+                <button ng-click="data.lyrics.splice($index, 1)" class="waves-effect waves-light btn red">Delete Song</button> <button ng-click="moveUp($index)" class="waves-effect waves-light btn blue"><i class="material-icons">keyboard_arrow_up</i></button>
+                <button ng-click="moveDown($index)" class="waves-effect waves-light btn blue"><i class="material-icons">keyboard_arrow_down</i></button>
+
             </div>
         </div>
-        <button ng-click="data.lyrics.push({});" class="waves-effect waves-light btn">Add Song</button>
-        <button ng-click="save(data)" class="waves-effect waves-light btn">Save</button>
+        <br/><br/><br/><br/>
+        <div style="position:fixed; bottom:0; right:0">
+            <button ng-click="data.lyrics.push({});" class="waves-effect waves-light btn">Add Song</button>
+            <button ng-click="save(data)" class="waves-effect waves-light btn">Save</button>
+        </div>
         <!-- <button ng-click="console.log(angular.toJson(data))" class="waves-effect waves-light btn">DBG</button> -->
     </div>
     <!--Import jQuery before materialize.js-->
@@ -49,20 +56,20 @@
 
             };
 
-            $scope.moveUp = function(i){
-              if(i <= 0)
-                return;
-              var tmp = $scope.data.lyrics[i - 1];
-              $scope.data.lyrics[i - 1] = $scope.data.lyrics[i];
-              $scope.data.lyrics[i] = tmp;
+            $scope.moveUp = function(i) {
+                if (i <= 0)
+                    return;
+                var tmp = $scope.data.lyrics[i - 1];
+                $scope.data.lyrics[i - 1] = $scope.data.lyrics[i];
+                $scope.data.lyrics[i] = tmp;
             }
 
-            $scope.moveDown = function(i){
-              if(i >= $scope.data.lyrics.length)
-                return;
-              var tmp = $scope.data.lyrics[i + 1];
-              $scope.data.lyrics[i + 1] = $scope.data.lyrics[i];
-              $scope.data.lyrics[i] = tmp;
+            $scope.moveDown = function(i) {
+                if (i >= $scope.data.lyrics.length - 1)
+                    return;
+                var tmp = $scope.data.lyrics[i + 1];
+                $scope.data.lyrics[i + 1] = $scope.data.lyrics[i];
+                $scope.data.lyrics[i] = tmp;
             }
 
 

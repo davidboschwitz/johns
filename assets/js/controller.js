@@ -71,7 +71,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             text: '',
             title: 'Please select a song'
         };
-        $http.get('https://vps.boschwitz.me/johns/backend/get.php?p=lyrics').then(function(res) {
+        $http.get('https://vps.boschwitz.me/johns/pub/get.php?p=lyrics').then(function(res) {
             console.log(res)
             $scope.data = res.data;
         });
@@ -85,7 +85,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
         console.log('changed to shows page');
         $scope.data = {};
 
-        $http.get('https://vps.boschwitz.me/johns/backend/get.php?p=shows').then(function(res) {
+        $http.get('https://vps.boschwitz.me/johns/pub/get.php?p=shows').then(function(res) {
             console.log(res)
             $scope.data = res.data;
         });
