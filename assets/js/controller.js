@@ -28,7 +28,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
         });
 
         $routeProvider.otherwise({
-            redirectTo: '/home'
+            redirectTo: '/music'
         });
 
     })
