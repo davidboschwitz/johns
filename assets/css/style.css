@@ -38,7 +38,7 @@
         font-weight: 300;
         bottom: 40px;
         left: 30px;
-        font-size: 36px;
+        font-size: 24px;
         font-family: 'Muli', sans-serif;
         text-align: center;
         width: 528px;
@@ -79,9 +79,9 @@
         position: absolute;
         font-weight: 300;
         bottom: 0px;
-        left: 30px;
+        left: 10px;
         font-size: 64px;
-        font-family: 'Reem Kufi', sans-serif;
+        font-family: '1786 GLC Fournier', 'Reem Kufi', sans-serif;
         margin-bottom: 0.67em;
         text-align: left;
     }
@@ -91,8 +91,8 @@
         position: absolute;
         font-weight: 300;
         bottom: 10px;
-        left: 30px;
-        font-size: 28px;
+        left: 10px;
+        font-size: 22px;
         font-family: 'Muli', sans-serif;
         text-align: left;
     }
