@@ -19,7 +19,7 @@ $(window).on("load", function() {
                     $('.typed').parent().children('.typed-cursor').css('display', 'none') //.delay(1500).fadeOut('slow');
                     $('.hero_carrot').delay(1000).fadeIn('slow');
                     $('.typed').children('a').click(function() {
-                        scrollTo(0, window.innerHeight - 200);
+                        scrollTo(0, window.innerHeight - (window.innerWidth < 600 ? 140 : 200));
                     });
                 }
             });

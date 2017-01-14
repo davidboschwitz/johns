@@ -5,7 +5,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#ddd;">
     <div class="container" ng-app="johnsApp" ng-controller="editLyricsController">
         <h1>Edit Shows <small style="font-size:20px;"><a href="editlyrics.html">Edit Lyrics</a></small></h1>
         <div class="card row" ng-repeat="show in data.shows">
@@ -55,8 +55,8 @@
                 <button ng-click="moveDown($index)" class="waves-effect waves-light btn blue"><i class="material-icons">keyboard_arrow_down</i></button>
             </div>
         </div>
-        <button ng-click="data.shows.push({links:[]});" class="waves-effect waves-light btn">Add show</button>
-        <button ng-click="save(data)" class="waves-effect waves-light btn">Save</button>
+        <button ng-click="data.shows.push({links:[]});" class="waves-effect waves-light btn" style="position:fixed;bottom:0;left:0;">Add show</button>
+        <button ng-click="save(data)" class="waves-effect waves-light btn" style="position:fixed;bottom:0;right:0;">Save</button>
         <!-- <button ng-click="dbg(data)" class="waves-effect waves-light btn">DBG</button> -->
     </div>
     <!--Import jQuery before materialize.js-->

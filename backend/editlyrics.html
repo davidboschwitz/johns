@@ -5,7 +5,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#ddd;">
     <div class="container" ng-app="johnsApp" ng-controller="editLyricsController">
         <h1>Edit Lyrics <small style="font-size:20px;"><a href="editshows.html">Edit Shows</a></small></h1>
         <div class="card row" ng-repeat="lyric in data.lyrics">
@@ -24,9 +24,9 @@
             </div>
         </div>
         <br/><br/><br/><br/>
-        <div style="position:fixed; bottom:0; right:0">
-            <button ng-click="data.lyrics.push({});" class="waves-effect waves-light btn">Add Song</button>
-            <button ng-click="save(data)" class="waves-effect waves-light btn">Save</button>
+        <div>
+            <button ng-click="data.lyrics.push({});" class="waves-effect waves-light btn" style="position:fixed; bottom:0; left:0">Add Song</button>
+            <button ng-click="save(data)" class="waves-effect waves-light btn" style="position:fixed; bottom:0; right:0">Save</button>
         </div>
         <!-- <button ng-click="console.log(angular.toJson(data))" class="waves-effect waves-light btn">DBG</button> -->
     </div>
