@@ -15,6 +15,7 @@
           </div>
       </div>
     </div>
+    <h3 ng-if="!data.shows">No upcoming shows right now... Check back soon!</h3>
     <div class="card" ng-repeat="show in data.shows">
         <div class="card-content">
             <span class="card-title">{{show.title}}</span><br/>
