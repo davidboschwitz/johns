@@ -1,0 +1,29 @@
+<h1 class="title">Shows</h1>
+<div>
+    <div ng-if="!data.shows" style="text-align:center">
+      <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                  <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                  <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                  <div class="circle"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <h5 ng-if="!!data.shows && data.shows.length == 0" style="text-align:center;">No upcoming shows right now... Check back soon!</h5>
+    <div class="card" ng-repeat="show in data.shows">
+        <div class="card-content">
+            <span class="card-title">{{show.title}}</span><br/>
+            <span>{{show.time}}</span>
+            <p>{{show.description}}</p>
+        </div>
+        <div class="card-action" ng-if="show.links">
+            <a ng-repeat="link in show.links" href="{{link.url}}" target="_blank">{{link.title}}</a>
+        </div>
+    </div>
+</div>
