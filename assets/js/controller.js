@@ -12,22 +12,22 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     .config(function($routeProvider) {
         $routeProvider.when("/contact", {
             controller: "contactController",
-            templateUrl: "assets/contact.html"
+            templateUrl: "assets/html/contact.html"
         });
 
         $routeProvider.when("/music", {
             controller: "musicController",
-            templateUrl: "assets/music.html"
+            templateUrl: "assets/html/music.html"
         });
 
         $routeProvider.when("/shows", {
             controller: "showsController",
-            templateUrl: "assets/shows.html"
+            templateUrl: "assets/html/shows.html"
         });
 
         $routeProvider.when("/lyrics", {
             controller: "lyricsController",
-            templateUrl: "assets/lyrics.html"
+            templateUrl: "assets/html/lyrics.html"
         });
 
         $routeProvider.otherwise({
