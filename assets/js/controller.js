@@ -6,9 +6,9 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             return $sce.trustAsHtml(text);
         }
     })
-    .config(function($locationProvider) {
-        $locationProvider.html5Mode(true);
-    })
+    // .config(function($locationProvider) {
+    //     $locationProvider.html5Mode(true);
+    // })
     .config(function($routeProvider) {
         $routeProvider.when("/contact", {
             controller: "contactController",
