@@ -4,7 +4,8 @@
         padding-top: 5px;
         padding-left: 10px;
         background-attachment: relative;
-        background-position: center center;
+        background-position-x: center;
+        background-position-y: -100px;
         -webkit-background-size: 100%;
         -moz-background-size: 100%;
         -o-background-size: 100%;
@@ -48,10 +49,11 @@
 @media (max-width: 600px) {
     .hero {
         background: url(../img/hero.jpg) no-repeat center top;
+        background-position-x: -140px;
         padding-top: 5px;
         padding-left: 10px;
         background-attachment: relative;
-        background-position: center center;
+        background-position-y: center;
         width: 100%;
         -webkit-background-size: 100%;
         -moz-background-size: 100%;
@@ -92,7 +94,7 @@
         font-weight: 300;
         bottom: 10px;
         left: 10px;
-        font-size: 22px;
+        font-size: 20px;
         font-family: 'Muli', sans-serif;
         text-align: left;
     }
@@ -228,12 +230,12 @@ a:hover {
     min-height: 100%;
 }
 
-#toast-container {
+/*#toast-container {
     top: auto !important;
     bottom: 30px;
     left: 0;
     right: 0;
-}
+}*/
 
 
 .loaded .loading_name {
