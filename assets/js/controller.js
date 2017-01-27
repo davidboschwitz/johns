@@ -1,46 +1,50 @@
 angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an angular service
-    //http://stackoverflow.com/questions/15449325/how-can-i-preserve-new-lines-in-an-angular-partial
-    .filter('newline', function($sce) {
-        return function(text) {
-            text = text.replace(/\n/g, '<br />');
-            return $sce.trustAsHtml(text);
-        }
-    })
-    // .config(function($locationProvider) {
-    //     $locationProvider.html5Mode(true);
-    // })
-    .config(function($routeProvider) {
-        $routeProvider.when("/contact", {
-            controller: "contactController",
-            templateUrl: "assets/html/contact.html",
-            title: "Contact John Lensing"
-        });
+//http://stackoverflow.com/questions/15449325/how-can-i-preserve-new-lines-in-an-angular-partial
+.filter('newline', function($sce) {
+    return function(text) {
+        text = text.replace(/\n/g, '<br />');
+        return $sce.trustAsHtml(text);
+    }
+})
+// .config(function($locationProvider) {
+//     $locationProvider.html5Mode(true);
+// })
+.config(function($routeProvider) {
+    $routeProvider.when("/contact", {
+        controller: "contactController",
+        templateUrl: "assets/html/contact.html",
+        title: "Contact John Lensing"
+    });
 
-        $routeProvider.when("/music", {
-            controller: "musicController",
-            templateUrl: "assets/html/music.html",
-            title: "Meet John Lensing"
-        });
+    $routeProvider.when("/music", {
+        controller: "musicController",
+        templateUrl: "assets/html/music.html",
+        title: "Meet John Lensing"
+    });
 
-        $routeProvider.when("/shows", {
-            controller: "showsController",
-            templateUrl: "assets/html/shows.html",
-            title: "Shows - John Lensing"
-        });
+    $routeProvider.when("/shows", {
+        controller: "showsController",
+        templateUrl: "assets/html/shows.html",
+        title: "Shows - John Lensing"
+    });
 
-        $routeProvider.when("/lyrics", {
-            controller: "lyricsController",
-            templateUrl: "assets/html/lyrics.html",
-            title: "Lyrics - John Lensing"
-        });
+    $routeProvider.when("/lyrics", {
+        controller: "lyricsController",
+        templateUrl: "assets/html/lyrics.html",
+        title: "Lyrics - John Lensing"
+    });
 
-        $routeProvider.otherwise({
-            redirectTo: '/music'
-        });
-        $routeProvider.$on('$routeChangeSuccess', function(event, current) {
-            document.title = current.title;
-        });
-    })
+    $routeProvider.otherwise({
+        redirectTo: '/music'
+    });
+})
+
+//taken from http://stackoverflow.com/questions/26308020/how-to-change-page-title-in-angular-using-routeprovider
+.run(['$rootScope', '$route', function($rootScope, $route) {
+    $rootScope.$on('$routeChangeSuccess', function() {
+        document.title = $route.current.title;
+    });
+}]);
 
 .service('Materialize', function() {
     return Materialize;
