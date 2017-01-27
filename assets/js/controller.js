@@ -12,28 +12,34 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     .config(function($routeProvider) {
         $routeProvider.when("/contact", {
             controller: "contactController",
-            templateUrl: "assets/html/contact.html"
+            templateUrl: "assets/html/contact.html",
+            title: "Contact John Lensing"
         });
 
         $routeProvider.when("/music", {
             controller: "musicController",
-            templateUrl: "assets/html/music.html"
+            templateUrl: "assets/html/music.html",
+            title: "Meet John Lensing"
         });
 
         $routeProvider.when("/shows", {
             controller: "showsController",
-            templateUrl: "assets/html/shows.html"
+            templateUrl: "assets/html/shows.html",
+            title: "Shows - John Lensing"
         });
 
         $routeProvider.when("/lyrics", {
             controller: "lyricsController",
-            templateUrl: "assets/html/lyrics.html"
+            templateUrl: "assets/html/lyrics.html",
+            title: "Lyrics - John Lensing"
         });
 
         $routeProvider.otherwise({
             redirectTo: '/music'
         });
-
+        $routeProvider.$on('$routeChangeSuccess', function(event, current) {
+            document.title = current.title;
+        });
     })
 
 .service('Materialize', function() {
