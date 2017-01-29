@@ -44,7 +44,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     $rootScope.$on('$routeChangeSuccess', function() {
         document.title = $route.current.title;
         if(window.ga)
-          ga('send', 'pageview', $route.current.);
+          console.log('send', 'pageview', $route.current.url);
     });
 }])
 
