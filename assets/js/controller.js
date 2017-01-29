@@ -43,6 +43,8 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
 .run(['$rootScope', '$route', function($rootScope, $route) {
     $rootScope.$on('$routeChangeSuccess', function() {
         document.title = $route.current.title;
+        if(window.ga)
+          ga('send', 'pageview', $route.current.);
     });
 }])
 
@@ -104,6 +106,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     });
 })
 
-.controller('musicController', function($scope, goto) {
-    console.log('changed to music page')
+.controller('musicController', function($scope, goto, $location) {
+    console.log('changed to music page');
+    console.log($location.path());
 });
