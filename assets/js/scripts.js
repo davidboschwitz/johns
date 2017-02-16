@@ -33,8 +33,8 @@ $(window).on("load", function() {
         $('body').addClass('loaded');
         setTimeout(function() {
             $(".typed").typed({
-                //And I love
-                strings: ['<a href="#/music" title="Listen to John Play">Music</a> ^150| <a href="#/videos" title="Watch John Play">Videos</a> ^150| <a href="#/shows" title="See John Live">Shows</a> ^150| <a href="#/blog" title="Read John\'s thoughts">Blog</a> ^150| <a href="#/lyrics" title="Read/Sing along to John\'s music">Lyrics</a> ^150| <a href="#/contact" title="Talk to John">Contact</a>'],
+                //<a href="#/music" title="Listen to John Play">Music</a> ^150| <a href="#/videos" title="Watch John Play">Videos</a> ^150| <a href="#/shows" title="See John Live">Shows</a> ^150| <a href="#/blog" title="Read John\'s thoughts">Blog</a> ^150| <a href="#/lyrics" title="Read/Sing along to John\'s music">Lyrics</a> ^150| <a href="#/contact" title="Talk to John">Contact</a>
+                strings: ['<a href="#/music" title="Listen to John Play">Music</a> ^150| <a href="#/shows" title="See John Live">Shows</a> ^150| <a href="#/lyrics" title="Read/Sing along to John\'s music">Lyrics</a> ^150| <a href="#/contact" title="Talk to John">Contact</a>'],
                 typeSpeed: 20,
                 backDelay: 700,
                 loop: false,
