@@ -1,0 +1,25 @@
+<h1>Blog</h1>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m8">
+            <div ng-repeat="blog in blogs">
+                <a href="#/blog/{{blog.blogID}}" style="color:black; text-decoration:none;">
+                    <div class="card card-image" style="cursor:pointer;">
+                        <div ng-if="!!blog.coverIMG">
+                            <div class="card-image"><img src="{{blog.coverIMG}}" />
+                                <div class="card-title"><b>{{blog.title}}</b></div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div ng-if="!blog.coverIMG">
+                                <div class="card-title"><b>{{blog.title}}</b></div>
+                            </div>
+                            {{blog.date}}<br/> {{blog.description}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col m4"><h3>Sidebar of sorts</h3></div>
+    </div>
+</div>

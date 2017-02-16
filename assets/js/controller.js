@@ -1,50 +1,62 @@
 angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an angular service
-//http://stackoverflow.com/questions/15449325/how-can-i-preserve-new-lines-in-an-angular-partial
-.filter('newline', function($sce) {
-    return function(text) {
-        text = text.replace(/\n/g, '<br />');
-        return $sce.trustAsHtml(text);
-    }
-})
-// .config(function($locationProvider) {
-//     $locationProvider.html5Mode(true);
-// })
-.config(function($routeProvider) {
-    $routeProvider.when("/contact", {
-        controller: "contactController",
-        templateUrl: "assets/html/contact.html",
-        title: "Contact John Lensing"
-    });
+    //http://stackoverflow.com/questions/15449325/how-can-i-preserve-new-lines-in-an-angular-partial
+    .filter('newline', function($sce) {
+        return function(text) {
+            text = text.replace(/\n/g, '<br />');
+            return $sce.trustAsHtml(text);
+        }
+    })
+    // .config(function($locationProvider) {
+    //     $locationProvider.html5Mode(true);
+    // })
+    .config(function($routeProvider) {
+        $routeProvider.when("/contact", {
+            controller: "contactController",
+            templateUrl: "assets/html/contact.html",
+            title: "Contact John Lensing"
+        });
 
-    $routeProvider.when("/music", {
-        controller: "musicController",
-        templateUrl: "assets/html/music.html",
-        title: "Meet John Lensing"
-    });
+        $routeProvider.when("/music", {
+            controller: "musicController",
+            templateUrl: "assets/html/music.html",
+            title: "Meet John Lensing"
+        });
 
-    $routeProvider.when("/shows", {
-        controller: "showsController",
-        templateUrl: "assets/html/shows.html",
-        title: "Shows - John Lensing"
-    });
+        $routeProvider.when("/shows", {
+            controller: "showsController",
+            templateUrl: "assets/html/shows.html",
+            title: "Shows - John Lensing"
+        });
 
-    $routeProvider.when("/lyrics", {
-        controller: "lyricsController",
-        templateUrl: "assets/html/lyrics.html",
-        title: "Lyrics - John Lensing"
-    });
+        $routeProvider.when("/lyrics", {
+            controller: "lyricsController",
+            templateUrl: "assets/html/lyrics.html",
+            title: "Lyrics - John Lensing"
+        });
 
-    $routeProvider.otherwise({
-        redirectTo: '/music'
-    });
-})
+        $routeProvider.when("/blog", {
+            controller: "blogController",
+            templateUrl: "assets/html/blog.html",
+            title: "Blog - John Lensing"
+        });
+
+        $routeProvider.when("/blog/:blogID", {
+            controller: "viewBlogController",
+            templateUrl: "assets/html/viewblog.html",
+            title: "Blog - John Lensing"
+        });
+
+        $routeProvider.otherwise({
+            redirectTo: '/music'
+        });
+    })
 
 //taken from http://stackoverflow.com/questions/26308020/how-to-change-page-title-in-angular-using-routeprovider
 .run(['$rootScope', '$route', function($rootScope, $route) {
     $rootScope.$on('$routeChangeSuccess', function() {
         document.title = $route.current.title;
-        if(window.ga)
-          ga('send', 'pageview', window.location.hash);
+        if (window.ga)
+            ga('send', 'pageview', window.location.hash);
     });
 }])
 
@@ -106,7 +118,62 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     });
 })
 
-.controller('musicController', function($scope, goto, $location) {
+.controller('musicController', function($scope, $location) {
     console.log('changed to music page');
     console.log($location.path());
+})
+
+/* Blog Stuff */
+
+.factory('loadBlogData', function($http) {
+    return function() {
+        var response;
+        $http.get('localhost/backend/get.php?p=blogs').then(function(res) {
+            console.log(res)
+            response = res.data;
+        });
+        return response;
+    };
+})
+
+.controller('blogController', function($scope, $http) {
+    console.log('changed to blog page');
+
+    $http.get('/backend/get.php?p=blogs').then(function(res) {
+        console.log(res)
+        $scope.data = res.data;
+
+        $scope.blogs = [];
+        for (var blogID in $scope.data) {
+            var blog = $scope.data[blogID];
+            blog.blogID = blogID;
+            $scope.blogs.push(blog);
+        }
+    });
+})
+
+.controller('viewBlogController', function($scope, $route, loadBlogData, $http, $sce) {
+    console.log('changed to view blog page');
+    $scope.route = $route;
+
+    // var data = loadBlogData();
+
+    $scope.data = {};
+
+    $scope.blog = {
+        title: '404 - Not Found',
+        content: $sce.trustAsHtml('This blog does not exist.')
+    };
+
+    $http.get('/backend/get.php?p=blogs').then(function(res) {
+        console.log(res)
+        $scope.data = res.data;
+        if (!!$scope.data[$route.current.params.blogID]) {
+            $scope.blog = $scope.data[$route.current.params.blogID];
+            $scope.blog.content = $sce.trustAsHtml($scope.blog.content);
+        }
+    });
+
+
+
 });

@@ -38,7 +38,7 @@ limitations under the License.
     <!-- <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" /> -->
     <link type="text/css" rel="stylesheet" href="assets/css/loading.css" />
     <link href="https://fonts.googleapis.com/css?family=Muli|Reem+Kufi:300,400" rel="stylesheet">
-    <link href="https://db.onlinewebfonts.com/c/6fff6a48816e33a717b0ef6d737f929c?family=1786+GLC+Fournier" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/6fff6a48816e33a717b0ef6d737f929c?family=1786+GLC+Fournier" rel="stylesheet" type="text/css" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Musician. Minnesota Native. Denver Based.">
@@ -84,7 +84,7 @@ limitations under the License.
 </head>
 
 <body class="anchor" style="margin:0" ng-app="johnsApp" ng-controller="indexController">
-<!-- <base href="/"> -->
+    <!-- <base href="/"> -->
     <div id="loader-wrapper">
         <h1 style="font-weight:100;" class="me_name loading_name load-fade-in">John Lensing</h1>
         <div id="loader"></div>
@@ -100,11 +100,23 @@ limitations under the License.
         </div>
     </div>
 
+    <div id="menu" style="display: none;" class="menu-sticky z-depth-3">
+        <span style="font-weight:100;color: white;margin: 10px 10px;font-family: '1786 GLC Fournier';font-size: 2.2rem;">John Lensing</span>
+        <span id="menu-links">
+          <a href="#/music" title="Listen to John Play">Music</a> |
+          <a href="#/videos" title="Watch John Play">Videos</a> |
+          <a href="#/shows" title="See John Live">Shows</a> |
+          <a href="#/blog" title="Read John's thoughts">Blog</a> |
+          <a href="#/lyrics" title="Read/Sing along to John's music">Lyrics</a> |
+          <a href="#/contact" title="Talk to John">Contact</a>
+        </span>
+    </div>
+
     <div style="display:none">
 
     </div>
 
-    <div class="social z-depth-2">
+    <div class="social">
         <a href="https://soundcloud.com/john-lensing-213121142" title="soundcloud"><i class="fa fa-soundcloud" style="color:#f50"></i></a>
         <a href="https://youtu.be/KIoV0QT5u6Y?list=PLHzVotvJt4Ncmckwt5YJnTuX-KPledOAq" title="youtube"><i class="fa fa-youtube-play" style="color:red"></i></a>
         <a href="https://twitter.com/JLensingmusic" title="twitter"><i class="fa fa-twitter" style="color:#00acee"></i></a>
@@ -120,24 +132,37 @@ limitations under the License.
             <div ng-view />
         </div>
         <div class="footer" style="text-align:center;">
-          &copy; &amp; <span style="color:red">&hearts;</span> John Lensing - Site made by <a href="http://david.boschwitz.me" target="_blank">David Boschwitz</a>
+            &copy; &amp; <span style="color:red">&hearts;</span> John Lensing - Site made by <a href="http://david.boschwitz.me" target="_blank">David Boschwitz</a>
         </div>
     </div>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
-    <link rel='stylesheet' href='assets/css/loading-bar.css' type='text/css' media='all' />
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script> -->
+
+
+    <!-- OFFLINE -->
+    <script type="text/javascript" src="workspace/jquery.min.js"></script>
+    <link rel="stylesheet" href="workspace/materialize/css/materialize.min.css">
+    <script src="workspace/materialize/js/materialize.min.js"></script>
+    <script src="workspace/angular.min.js"></script>
+    <script src="workspace/angular-route.js"></script>
+    <script type='text/javascript' src='workspace/loading-bar.min.js'></script>
+
+
     <script src="assets/js/controller.js"></script>
     <!-- <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>-->
     <script type="text/javascript" src="assets/js/typed.js"></script>
     <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="assets/js/scripts.js"></script>
+    <link rel='stylesheet' href='assets/css/loading-bar.css' type='text/css' media='all' />
+
+
     <script>
         // (function(i, s, o, g, r, a, m) {
         //     i['GoogleAnalyticsObject'] = r;
@@ -175,17 +200,22 @@ limitations under the License.
         //     s.setAttribute('src', 'assets/js/analytics.js');
         //     document.body.appendChild(s);
         // }
-        var youtubeComingSoon = $('<div class="toast" style="position:fixed; top:45px; right:10px">Youtube coming soon...</div>');
     </script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-91032184-1', 'auto');
-      ga('send', 'pageview');
-
+        ga('create', 'UA-91032184-1', 'auto');
+        ga('send', 'pageview');
     </script>
 </body>
 

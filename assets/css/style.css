@@ -22,7 +22,6 @@
     .mobile-only {
         display: none;
     }
-
     .me_name {
         position: absolute;
         font-weight: 300;
@@ -32,13 +31,12 @@
         font-family: '1786 GLC Fournier', 'Reem Kufi', sans-serif;
         margin-bottom: 0.67em;
     }
-
     .me_typed {
         padding-left: 5px;
         position: absolute;
         font-weight: 300;
         bottom: 40px;
-        left: 30px;
+        left: 15px;
         font-size: 24px;
         font-family: 'Muli', sans-serif;
         text-align: center;
@@ -87,7 +85,6 @@
         margin-bottom: 0.67em;
         text-align: left;
     }
-
     .me_typed {
         padding-left: 5px;
         position: absolute;
@@ -107,6 +104,11 @@
 .header {
     font-weight: 100;
     color: #4d4d4d;
+}
+
+.footer {
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .card-title {
@@ -136,8 +138,12 @@
     font-size: 64px;
 }
 
+.me_name {
+    font-family: '1786 GLC Fournier';
+}
+
 h1 {
-  font-family: '1786 GLC Fournier', 'Reem Kufi', sans-serif;
+    font-family: 'Reem Kufi', sans-serif;
 }
 
 h2, h3, h4, h5, h6, .card-title {
@@ -145,8 +151,9 @@ h2, h3, h4, h5, h6, .card-title {
 }
 
 .title {
-  margin-top: 0;
+    margin-top: 0;
 }
+
 
 /* Social */
 
@@ -155,10 +162,14 @@ h2, h3, h4, h5, h6, .card-title {
     z-index: 100;
     top: 0;
     right: 0;
-    background: #e0e0e0;
+    background: transparent;
     padding: 3px;
     border-radius: 4px;
     font-size: 32px;
+}
+
+.social>a:hover {
+    filter: brightness(75%);
 }
 
 * {
@@ -167,6 +178,14 @@ h2, h3, h4, h5, h6, .card-title {
 
 a:hover {
     text-decoration: underline;
+}
+
+.menu-sticky {
+    background-color: rgba(0, 0, 0, 0.70);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 
@@ -230,13 +249,13 @@ a:hover {
     min-height: 100%;
 }
 
+
 /*#toast-container {
     top: auto !important;
     bottom: 30px;
     left: 0;
     right: 0;
 }*/
-
 
 .loaded .loading_name {
     display: none;
@@ -297,7 +316,8 @@ kbd {
 }
 
 .card .card-content p {
-    padding-left: 10px
+    padding-left: 10px;
+    margin: 25px 0px;
 }
 
 fw100 {

@@ -1,0 +1,12 @@
+<a href="#/blog">&lt;&lt; blog</a>
+<h1>{{blog.title}} <span style="color:#757575; font-size:50%">{{blog.date}}</span></h1>
+<div class="card card-image" style="cursor:pointer;">
+    <div ng-if="!!blog.coverIMG">
+        <div class="card-image"><img src="{{blog.coverIMG}}" />
+            <div class="card-title"><b>{{blog.title}}</b></div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-content flow-text" ng-bind-html="blog.content"></div>
+</div>
