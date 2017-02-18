@@ -20,7 +20,7 @@
         <div class="card-content">
             <span class="card-title">{{show.title}}</span><br/>
             <span>{{show.time}}</span>
-            <p>{{show.description}}</p>
+            <p ng-if="show.description" style="margin-bottom:0">{{show.description}}</p>
         </div>
         <div class="card-action" ng-if="show.links">
             <a ng-repeat="link in show.links" href="{{link.url}}" target="_blank">{{link.title}}</a>
