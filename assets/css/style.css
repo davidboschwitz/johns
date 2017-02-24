@@ -212,6 +212,11 @@ button#mobile-menu-open {
     padding: 0 1rem;
 }
 
+button#mobile-menu-open>i {
+  transition: opacity 1.2s ease-in-out;
+  opacity: 1;
+}
+
 
 
 #mobile-menu {
@@ -243,7 +248,7 @@ button#mobile-menu-open {
 
 .menu-swoop-out {
     transform: translateY(-120%);
-    transition: all 1.0s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 
