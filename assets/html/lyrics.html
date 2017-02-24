@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </li>
-            <li class="collection-item" ng-repeat="lyric in data.lyrics" ng-class="[selectedLyric.title == lyric.title ? 'dblb' : '']" ng-click="select(lyric)">{{lyric.title}}</li>
+            <li class="collection-item lyric" ng-repeat="lyric in data.lyrics" ng-class="[selectedLyric.title == lyric.title ? 'selected' : '']" ng-click="select(lyric)">{{lyric.title}}</li>
         </ul>
     </div>
 
@@ -29,7 +29,7 @@
     </div>
 </div>
 <style>
-    .dblb {
+    .lyric.selected {
         background-color: #56c8ff !important;
     }
 </style>

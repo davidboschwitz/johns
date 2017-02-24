@@ -80,7 +80,7 @@
         font-weight: 300;
         bottom: 0px;
         left: 10px;
-        font-size: 64px;
+        font-size: 60px;
         font-family: '1786 GLC Fournier', 'Reem Kufi', sans-serif;
         margin-bottom: 0.67em;
         text-align: left;
@@ -154,18 +154,22 @@ h2, h3, h4, h5, h6, .card-title {
     margin-top: 0;
 }
 
+.fancy-john {
+    font-weight: 100;
+    color: white;
+    margin: 10px 10px;
+    font-family: '1786 GLC Fournier';
+}
+
 
 /* Social */
 
 .social {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    right: 0;
     background: transparent;
     padding: 3px;
+    padding-right: 10px;
     border-radius: 4px;
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .social>a:hover {
@@ -186,6 +190,60 @@ a:hover {
     top: 0;
     width: 100%;
     z-index: 10;
+}
+
+.menu-link {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.menu-link.active {
+    color: white;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+button#mobile-menu-open {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 200;
+    background-color: #039be5;
+    padding: 0 1rem;
+}
+
+
+
+#mobile-menu {
+    position: fixed;
+    top: 10px;
+    z-index: 1000;
+    /*background-color: #ddd;*/
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.mobile-menu-link {
+    color: white;
+    font-size: 38px;
+}
+
+.mobile-menu-link.active {
+    font-weight: bold;
+    font-size: 42px;
+}
+
+.menu-swoop-in {
+    transform: translateY(0);
+    transition: all 1.0s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.menu-swoop-out {
+    transform: translateY(-120%);
+    transition: all 1.0s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 

@@ -6,6 +6,23 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             return $sce.trustAsHtml(text);
         }
     })
+
+.filter('bbcode', function($sce) {
+        return function(text) {
+            var reg = /\[([a-z\-]*)\:([a-z\-\s]*)\]/ig;
+
+            function replacer(match, key, value, offset, string) {
+                switch (key) {
+                    case 'faicon':
+                        return '<i class="fa ' + value + '"></i>';
+                    case 'mdicon':
+                        return '<i class="mdi "';
+                }
+            }
+
+            return $sce.trustAsHtml(text.replace(reg, replacer));
+        };
+    })
     // .config(function($locationProvider) {
     //     $locationProvider.html5Mode(true);
     // })
@@ -76,16 +93,62 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     };
 })
 
-.controller('indexController', function($scope, $location, $route, goto) {
+.controller('indexController', function($scope, $location, $route, goto, $window, $timeout) {
+    var $ = $window.jQuery;
     window.ugh = function() {
         console.log($location, $route);
     }
 
     $scope.active = function(path) {
-        return $location.path() == path.split('/').join('') ? 'active' : '';
+        return $location.path() == path ? 'active' : '';
     }
 
     window.goto = $scope.goto = goto;
+
+    $scope.menu = {
+        mobile: {
+            isOpen: false,
+            style: {
+                true: 'menu-swoop-in',
+                false: 'menu-swoop-out'
+            },
+            toggle: function() {
+                this.isOpen = !this.isOpen;
+                if (this.isOpen) {
+                    $('#mobile-menu-open').css('padding-left', $window.innerWidth - 52).css('padding-bottom', $window.innerHeight - 26);
+                } else {
+                    $timeout(function() {
+                        $('#mobile-menu-open').css('padding-bottom', '0').css('padding-left', '1rem');
+                    }, 700);
+                }
+            }
+        },
+        links: [{
+            url: '/music',
+            title: 'Music',
+            hover: 'Listen to John Play'
+        }, {
+            url: '/videos',
+            title: 'Videos',
+            hover: 'Watch John Play'
+        }, {
+            url: '/shows',
+            title: 'Shows',
+            hover: 'See John Live'
+        }, {
+            url: '/blog',
+            title: 'Blog',
+            hover: 'Read John\'s Thoughts'
+        }, {
+            url: '/lyrics',
+            title: 'Lyrics',
+            hover: 'Read and Sing along to John\'s music'
+        }, {
+            url: '/contact',
+            title: 'Contact',
+            hover: 'Talk to John'
+        }, ]
+    }
 })
 
 .controller('contactController', function($scope, goto) {

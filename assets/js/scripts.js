@@ -18,7 +18,7 @@ $(window).scroll(function() {
             $('#menu').css('display', 'block');
         }
     } else if (stuck) {
-        $('#menu').css('display','none');
+        $('#menu').css('display', 'none');
         stuck = false;
     }
 });
@@ -29,25 +29,23 @@ $(window).on("load", function() {
 
     fixHeight();
 
+    $('body').addClass('loaded');
     setTimeout(function() {
-        $('body').addClass('loaded');
-        setTimeout(function() {
-            $(".typed").typed({
-                //<a href="#/music" title="Listen to John Play">Music</a> ^150| <a href="#/videos" title="Watch John Play">Videos</a> ^150| <a href="#/shows" title="See John Live">Shows</a> ^150| <a href="#/blog" title="Read John\'s thoughts">Blog</a> ^150| <a href="#/lyrics" title="Read/Sing along to John\'s music">Lyrics</a> ^150| <a href="#/contact" title="Talk to John">Contact</a>
-                strings: ['<a href="#/music" title="Listen to John Play">Music</a> ^150| <a href="#/shows" title="See John Live">Shows</a> ^150| <a href="#/lyrics" title="Read/Sing along to John\'s music">Lyrics</a> ^150| <a href="#/contact" title="Talk to John">Contact</a>'],
-                typeSpeed: 20,
-                backDelay: 700,
-                loop: false,
-                callback: function() {
-                    $('.typed').parent().children('.typed-cursor').css('display', 'none') //.delay(1500).fadeOut('slow');
-                    $('.hero_carrot').delay(1000).fadeIn('slow');
-                    $('.typed').children('a').click(function() {
-                        scrollTo(0, window.innerHeight - (window.innerWidth < 600 ? 140 : 42));
-                    });
-                }
-            });
-        }, 1000);
-    }, 1000)
+        $(".typed").typed({
+            //<a href="#/music" title="Listen to John Play">Music</a> ^150| <a href="#/videos" title="Watch John Play">Videos</a> ^150| <a href="#/shows" title="See John Live">Shows</a> ^150| <a href="#/blog" title="Read John\'s thoughts">Blog</a> ^150| <a href="#/lyrics" title="Read/Sing along to John\'s music">Lyrics</a> ^150| <a href="#/contact" title="Talk to John">Contact</a>
+            strings: ['<a href="#/music" title="Listen to John Play">Music</a> ^150| <a href="#/shows" title="See John Live">Shows</a> ^150| <a href="#/lyrics" title="Read/Sing along to John\'s music">Lyrics</a> ^150| <a href="#/contact" title="Talk to John">Contact</a>'],
+            typeSpeed: 20,
+            backDelay: 700,
+            loop: false,
+            callback: function() {
+                $('.typed').parent().children('.typed-cursor').css('display', 'none') //.delay(1500).fadeOut('slow');
+                $('.hero_carrot').delay(1000).fadeIn('slow');
+                $('.typed').children('a').click(function() {
+                    scrollTo(0, window.innerHeight - (window.innerWidth < 600 ? 140 : 42));
+                });
+            }
+        });
+    }, 1000);
 
 
 });
