@@ -104,7 +104,7 @@ limitations under the License.
         <div id="menu-links">
             <span style="font-weight:100;color: white;margin: 10px 10px;font-family: '1786 GLC Fournier';font-size: 2.2rem;">John Lensing</span>
             <span ng-repeat="link in menu.links">
-                <a ng-class="[active(link.url)]" class="menu-link" href="#{{link.url}}" title="{{link.hover}}">{{link.title}}</a>
+                <a ng-class="[active(link.url)]" ng-click="scrollToTop()" class="menu-link" href="#{{link.url}}" title="{{link.hover}}">{{link.title}}</a>
                 <span ng-if="$index + 1 < menu.links.length" style="font-size:23px">|</span>
             </span>
         </div>
@@ -116,21 +116,21 @@ limitations under the License.
     </button>
 
     <div ng-class="[menu.mobile.style[menu.mobile.isOpen]]" id="mobile-menu" ng-click="menu.mobile.toggle()" class="">
-        <span class="fancy-john" style="font-size: 58px;">John Lensing</span>
-        <hr class="david-hr"/>
+        <span class="fancy-john" style="font-size: 58px; color:black;">John Lensing</span>
+        <hr class="david-hr" />
         <ul id="menu-links">
-            <li ng-repeat="link in menu.links"><a class="mobile-menu-link" ng-class="[active(link.url)]" href="#{{link.url}}" title="{{link.hover}}">{{link.title}}</a></li>
+            <li ng-repeat="link in menu.links"><a class="mobile-menu-link" ng-class="[active(link.url)]" ng-click="scrollToTop()" href="#{{link.url}}" title="{{link.hover}}">{{link.title}}</a></li>
         </ul>
-        <hr class="david-hr"/>
+        <hr class="david-hr" />
         <div class="social" style="text-align:center; width:100%; font-size:44px;">
             <a href="https://soundcloud.com/john-lensing-213121142" title="soundcloud" target="_blank"><i class="fa fa-soundcloud" style="color:#f50"></i></a>
             <a href="https://youtu.be/KIoV0QT5u6Y?list=PLHzVotvJt4Ncmckwt5YJnTuX-KPledOAq" title="youtube"><i class="fa fa-youtube-play" style="color:red"></i></a>
             <a href="https://twitter.com/JLensingmusic" title="twitter" target="_blank"><i class="fa fa-twitter" style="color:#00acee"></i></a>
             <a href="https://www.facebook.com/johnlensingmusic/" title="facebook" target="_blank"><i class="fa fa-facebook-square" style="color:#597dc7"></i></a><br/>
-            <a href="https://www.instagram.com/johnlensingmusic/" title="instagram" target="_blank"><i class="fa fa-instagram" style="color:#c1c1c1"></i></a>
+            <a href="https://www.instagram.com/johnlensingmusic/" title="instagram" target="_blank"><i class="fa fa-instagram" style="color:#636363"></i></a>
             <a href="https://johnlensing.bandcamp.com/releases" title="bandcamp" target="_blank"><i class="fa fa-bandcamp" style="color:#639aa9"></i></a>
             <a href="https://open.spotify.com/artist/7Lv3WBg7xcO0Nj30BInwsY" title="spotify" target="_blank"><i class="fa fa-spotify" style="color:#1ed760"></i></a>
-            <a href="https://itunes.apple.com/us/album/john-lensing-ep/id1206055089" title="iTunes" target="_blank"><i class="fa fa-apple" style="color:#fff"></i></a>
+            <a href="https://itunes.apple.com/us/album/john-lensing-ep/id1206055089" title="iTunes" target="_blank"><i class="fa fa-apple" style="color:#c7c7c7"></i></a>
         </div>
     </div>
 

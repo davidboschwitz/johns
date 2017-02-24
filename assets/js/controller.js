@@ -103,7 +103,11 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
         return $location.path() == path ? 'active' : '';
     }
 
-    window.goto = $scope.goto = goto;
+    $scope.scrollToTop = function() {
+        $timeout(function() {
+            $window.scrollTo(0, $window.innerHeight);
+        }, 500);
+    }
 
     $scope.menu = {
         mobile: {
