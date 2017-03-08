@@ -39,6 +39,12 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             title: "Meet John Lensing"
         });
 
+        $routeProvider.when("/video", {
+            controller: "videoController",
+            templateUrl: "assets/html/video.html",
+            title: "Meet John Lensing"
+        });
+
         $routeProvider.when("/shows", {
             controller: "showsController",
             templateUrl: "assets/html/shows.html",
@@ -119,7 +125,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             toggle: function() {
                 this.isOpen = !this.isOpen;
                 if (this.isOpen) {
-                    $('#mobile-menu-open').css('padding-left', $window.innerWidth - 50).css('padding-bottom', $window.innerHeight - 20).children().css('opacity', 0);
+                    $('#mobile-menu-open').css('padding-left', $window.innerWidth - (window.innerWidth > 1000 ? 70 : 50)).css('padding-bottom', $window.innerHeight - 20).children().css('opacity', 0);
                 } else {
                     $timeout(function() {
                         $('#mobile-menu-open').css('padding-bottom', '0').css('padding-left', '1rem').children().css('opacity', 1);
@@ -132,8 +138,8 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             title: 'Music',
             hover: 'Listen to John Play'
         }, {
-            url: '/videos',
-            title: 'Videos',
+            url: '/video',
+            title: 'Video',
             hover: 'Watch John Play'
         }, {
             url: '/shows',

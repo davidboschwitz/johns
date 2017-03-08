@@ -95,12 +95,12 @@ limitations under the License.
     <div class="hero full-height" style="box-shadow: 0 5px 5px -2px grey;">
         <div class="hero-text">
             <h1 style="font-weight:100;" class="me_name">John Lensing</h1>
-            <div style="font-weight:300;padding-left:5px;" class="me_typed hide-on-med-and-down"><span class="typed"></span></div>
+            <!-- <div style="font-weight:300;padding-left:5px;" class="me_typed hide-on-med-and-down"><span class="typed"></span></div> -->
             <!-- <div class="hero_carrot"><i class="material-icons">arrow_downward</i></div> -->
         </div>
     </div>
 
-    <div id="menu" style="display: none;" class="menu-sticky z-depth-3 hide-on-med-and-down">
+    <!-- <div id="menu" style="display: none;" class="menu-sticky z-depth-3">
         <div id="menu-links">
             <span style="font-weight:100;color: white;margin: 10px 10px;font-family: '1786 GLC Fournier';font-size: 2.2rem;">John Lensing</span>
             <span ng-repeat="link in menu.links">
@@ -108,15 +108,15 @@ limitations under the License.
                 <span ng-if="$index + 1 < menu.links.length" style="font-size:23px">|</span>
             </span>
         </div>
-    </div>
+    </div> -->
 
-    <button id="mobile-menu-open" class="btn btn-xs mobile-only z-depth-3" ng-click="menu.mobile.toggle()">
+    <button id="mobile-menu-open" class="btn btn-xs xmobile-only z-depth-3" ng-click="menu.mobile.toggle()">
         <i class="fa fa-bars fa-3x" ></i>
         <!--ng-click="menu.mobile.isOpen = !menu.mobile.isOpen"  -->
     </button>
 
     <div ng-class="[menu.mobile.style[menu.mobile.isOpen]]" id="mobile-menu" ng-click="menu.mobile.toggle()" class="">
-        <span class="fancy-john" style="font-size: 58px; color:black;">John Lensing</span>
+        <span class="fancy-john menu-john">John Lensing</span>
         <hr class="david-hr" />
         <ul id="menu-links">
             <li ng-repeat="link in menu.links"><a class="mobile-menu-link" ng-class="[active(link.url)]" ng-click="scrollToTop()" href="#{{link.url}}" title="{{link.hover}}">{{link.title}}</a></li>
@@ -132,9 +132,21 @@ limitations under the License.
             <a href="https://open.spotify.com/artist/7Lv3WBg7xcO0Nj30BInwsY" title="spotify" target="_blank"><i class="fa fa-spotify" style="color:#1ed760"></i></a>
             <a href="https://itunes.apple.com/us/album/john-lensing-ep/id1206055089" title="iTunes" target="_blank"><i class="fa fa-apple" style="color:#c7c7c7"></i></a>
         </div>
+        <div class="spotify-embed hide-on-med-and-down">
+            <hr class="david-hr" />
+            <iframe src="https://embed.spotify.com/?uri=spotify:artist:7Lv3WBg7xcO0Nj30BInwsY&theme=white" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+        </div>
     </div>
 
-    <div class="social hide-on-med-and-down" style="position: fixed; z-index: 100; top: 0; right: 0;">
+    <!-- <button id="play-button" class="btn btn-xs z-depth-3" ng-click="play.toggle()">
+        <i class="fa fa-play fa-3x" ></i>
+    </button> -->
+
+    <!-- <div id="play-embed" >
+      <iframe src="https://embed.spotify.com/?uri=spotify:artist:7Lv3WBg7xcO0Nj30BInwsY&theme=white" width="300" height="380" frameborder="0" allowtransparency="true" style="border-radius: 5px;"></iframe>
+    </div> -->
+
+    <!-- <div class="social hide-on-med-and-down" style="position: fixed; z-index: 100; top: 0; right: 0;">
         <a href="https://soundcloud.com/john-lensing-213121142" title="soundcloud" target="_blank"><i class="fa fa-soundcloud" style="color:#f50"></i></a>
         <a href="https://youtu.be/KIoV0QT5u6Y?list=PLHzVotvJt4Ncmckwt5YJnTuX-KPledOAq" title="youtube"><i class="fa fa-youtube-play" style="color:red"></i></a>
         <a href="https://twitter.com/JLensingmusic" title="twitter" target="_blank"><i class="fa fa-twitter" style="color:#00acee"></i></a>
@@ -143,7 +155,7 @@ limitations under the License.
         <a href="https://johnlensing.bandcamp.com/releases" title="bandcamp" target="_blank"><i class="fa fa-bandcamp" style="color:#639aa9"></i></a>
         <a href="https://open.spotify.com/artist/7Lv3WBg7xcO0Nj30BInwsY" title="spotify" target="_blank"><i class="fa fa-spotify" style="color:#1ed760"></i></a>
         <a href="https://itunes.apple.com/us/album/john-lensing-ep/id1206055089" title="iTunes" target="_blank"><i class="fa fa-apple" style="color:#fff"></i></a>
-    </div>
+    </div> -->
 
     <div id="page-wrapper" style="background: url(assets/img/bg-spots.png); padding-top: 2.1rem;">
         <div id="page-content" class="container full-height" data-heightoffset="-200">
