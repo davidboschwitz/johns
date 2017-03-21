@@ -193,8 +193,20 @@ a:hover {
 }
 
 .menu-link {
-    font-size: 18px;
     color: #ddd;
+}
+
+#static-menu {
+    font-size: 22px;
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    width: 512px;
+    text-align: center;
+}
+
+#static-menu .menu-link {
+  color: white;
 }
 
 .menu-link.active {
@@ -231,10 +243,11 @@ button#play-button {
 }
 
 #play-embed {
-    position: fixed;
-    top: 30%;
-    left: 0;
-    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 80px;
+    width: 300px;
 }
 
 .woosh-transition {
@@ -281,7 +294,7 @@ button#play-button {
 }
 
 .card {
-  background: url(/assets/img/bg-spots.png);
+    background: url(/assets/img/bg-spots.png);
 }
 
 .menu-swoop-in {
