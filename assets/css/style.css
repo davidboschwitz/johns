@@ -140,6 +140,7 @@
 
 .me_name {
     font-family: '1786 GLC Fournier';
+    text-shadow: rgba(0,0,0,0.4) 2px 2px;
 }
 
 h1 {
@@ -203,6 +204,7 @@ a:hover {
     left: 30px;
     width: 512px;
     text-align: center;
+    text-shadow: rgba(0,0,0,0.4) 1px 1px;
 }
 
 #static-menu .menu-link {
