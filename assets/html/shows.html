@@ -17,22 +17,18 @@
     </div>
     <h5 ng-if="!!data.shows && data.shows.length == 0" style="text-align:center;">No upcoming shows right now... Check back soon!</h5>
     <div class="card row" ng-repeat="show in data.shows">
-        <div class="col s2" style="text-align:center; font-size: 120%;  position: relative;
-">
-          <div style="position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);">
+        <div class="col s2 m2 l1" style="text-align:center; font-size: 120%;  position: relative;">
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, 50%);">
           <span style="color: red; font-weight:bold;">{{show.date.month}}</span><br/>
           <span style="font-weight:bold;">{{show.date.day}}</span><br/>
           {{show.date.time}}
         </div>
         </div>
-        <div class="col s10" style="border-left: 1px solid rgba(160,160,160,0.2);">
+        <div class="col s10 m10 l11" style="border-left: 1px solid rgba(160,160,160,0.2);">
             <div class="card-content">
-                <span class="card-title">{{show.title}}</span><br/>
+                <span class="card-title">{{show.title}}</span>
 
-                <span ng-if="show.description" style="margin-bottom:0">{{show.description}}</span>
+                <span ng-if="show.description" style="margin-bottom:0"><br/>{{show.description}}</span>
             </div>
             <div class="card-action" ng-if="show.links">
                 <a ng-repeat="link in show.links" href="{{link.url}}" target="_blank">{{link.title}}</a>
