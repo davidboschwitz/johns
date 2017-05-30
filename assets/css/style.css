@@ -330,6 +330,14 @@ button#play-button {
     animation: blink 0.7s infinite;
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+    color: #039be5; /*#ffd8a6;*/
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+    color: #039be5; /*#ffab40;*/
+}
+
 @keyframes blink {
     0% {
         opacity: 1;
