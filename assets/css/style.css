@@ -171,6 +171,7 @@ h2, h3, h4, h5, h6, .card-title {
     padding-right: 10px;
     border-radius: 4px;
     font-size: 30px;
+    text-shadow: rgba(0,0,0,0.4) 1px 1px;
 }
 
 .social>a:hover {
