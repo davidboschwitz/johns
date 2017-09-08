@@ -135,8 +135,8 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
         },
         links: [{
             url: '/music',
-            title: 'Music',
-            hover: 'Listen to John Play'
+            title: 'Meet John',
+            hover: 'Have you met John?'
         }, {
             url: '/video',
             title: 'Video',
