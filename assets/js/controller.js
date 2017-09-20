@@ -209,7 +209,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
     };
 })
 
-.controller('blogController', function($scope, $http) {
+.controller('blogController', function($scope, $http, $window) {
     console.log('changed to blog page');
 $window.location.href = 'https://johnlensing.tumblr.com';
 //     $http.get('/backend/get.php?p=blogs').then(function(res) {
