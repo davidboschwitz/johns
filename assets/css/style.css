@@ -47,7 +47,7 @@
 @media (max-width: 600px) {
     .hero {
         background: url(../img/hero.jpg) no-repeat center top;
-        background-position-x: -140px;
+        background-position-x: -300px;
         padding-top: 5px;
         padding-left: 10px;
         background-attachment: relative;
