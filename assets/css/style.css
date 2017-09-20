@@ -182,10 +182,6 @@ h2, h3, h4, h5, h6, .card-title {
     font-family: 'Muli';
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 .menu-sticky {
     background-color: rgba(0, 0, 0, 0.70);
     position: fixed;
@@ -196,6 +192,7 @@ a:hover {
 
 .menu-link {
     color: #ddd;
+    text-decoration: none;
 }
 
 #static-menu {
@@ -480,4 +477,8 @@ fw700 {
 
 fw800 {
     font-weight: 800;
+}
+
+a:hover {
+    text-decoration: underline;
 }
