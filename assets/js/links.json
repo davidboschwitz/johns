@@ -1,0 +1,25 @@
+[{
+            url: '/music',
+            title: 'Meet John',
+            hover: 'Have you met John?'
+        }, {
+            url: '/video',
+            title: 'Video',
+            hover: 'Watch John Play'
+        }, {
+            url: '/shows',
+            title: 'Shows',
+            hover: 'See John Live'
+        // }, {
+        //     url: '/blog',
+        //     title: 'Blog',
+        //     hover: 'Read John\'s Thoughts'
+        }, {
+            url: '/lyrics',
+            title: 'Lyrics',
+            hover: 'Read and Sing along to John\'s music'
+        }, {
+            url: '/contact',
+            title: 'Contact',
+            hover: 'Talk to John'
+        }, ]
