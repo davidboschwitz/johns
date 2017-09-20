@@ -59,8 +59,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
 
         $routeProvider.when("/blog", {
             controller: "blogController",
-            templateUrl: "assets/html/blog.html",
-            title: "Blog - John Lensing"
+            redirectTo: 'https://johnlensing.tumblr.com'
         });
 
         $routeProvider.when("/blog/:blogID", {
@@ -145,10 +144,10 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             url: '/shows',
             title: 'Shows',
             hover: 'See John Live'
-        // }, {
-        //     url: '/blog',
-        //     title: 'Blog',
-        //     hover: 'Read John\'s Thoughts'
+         }, {
+             url: '/blog',
+             title: 'Blog',
+             hover: 'Read John\'s Thoughts'
         }, {
             url: '/lyrics',
             title: 'Lyrics',
