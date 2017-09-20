@@ -59,14 +59,15 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
 
         $routeProvider.when("/blog", {
             controller: "blogController",
-            redirectTo: 'https://johnlensing.tumblr.com'
+            templateUrl: 'assets/html/music.html,
+            title: "Please wait..."
         });
 
-        $routeProvider.when("/blog/:blogID", {
-            controller: "viewBlogController",
-            templateUrl: "assets/html/viewblog.html",
-            title: "Blog - John Lensing"
-        });
+//         $routeProvider.when("/blog/:blogID", {
+//             controller: "viewBlogController",
+//             templateUrl: "assets/html/viewblog.html",
+//             title: "Blog - John Lensing"
+//         });
 
         $routeProvider.otherwise({
             redirectTo: '/music'
@@ -137,14 +138,14 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             title: 'Meet John',
             hover: 'Have you met John?'
         }, {
-            url: '/video',
-            title: 'Video',
-            hover: 'Watch John Play'
+            url: '/blog',
+            title: 'Blog',
+            hover: 'Read John\'s Thoughts'
         }, {
             url: '/shows',
             title: 'Shows',
             hover: 'See John Live'
-         }, {
+        }, {
              url: '/blog',
              title: 'Blog',
              hover: 'Read John\'s Thoughts'
@@ -210,18 +211,18 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
 
 .controller('blogController', function($scope, $http) {
     console.log('changed to blog page');
+$window.location.href = 'https://johnlensing.tumblr.com';
+//     $http.get('/backend/get.php?p=blogs').then(function(res) {
+//         console.log(res)
+//         $scope.data = res.data;
 
-    $http.get('/backend/get.php?p=blogs').then(function(res) {
-        console.log(res)
-        $scope.data = res.data;
-
-        $scope.blogs = [];
-        for (var blogID in $scope.data) {
-            var blog = $scope.data[blogID];
-            blog.blogID = blogID;
-            $scope.blogs.push(blog);
-        }
-    });
+//         $scope.blogs = [];
+//         for (var blogID in $scope.data) {
+//             var blog = $scope.data[blogID];
+//             blog.blogID = blogID;
+//             $scope.blogs.push(blog);
+//         }
+//     });
 })
 
 .controller('viewBlogController', function($scope, $route, loadBlogData, $http, $sce) {
