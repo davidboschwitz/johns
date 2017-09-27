@@ -59,7 +59,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
 
         $routeProvider.when("/blog", {
             controller: "blogController",
-            templateUrl: 'assets/html/music.html',
+            templateUrl: 'assets/html/blog.html',
             title: "Please wait..."
         });
 
