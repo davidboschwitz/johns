@@ -128,7 +128,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
                     $('#mobile-menu-open').css('width', 'calc(100vw - 20px)').css('height', 'calc(100vh - 20px)').children().css('opacity', 0);
                 } else {
                     $timeout(function() {
-                        $('#mobile-menu-open').css('height', '0').css('width', '1rem').children().css('opacity', 1);
+                        $('#mobile-menu-open').css('height', 'fit-content').css('width', 'fit-content').children().css('opacity', 1);
                     }, 700);
                 }
             }
