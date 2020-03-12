@@ -125,7 +125,7 @@ angular.module('johnsApp', ['ngRoute', 'angular-loading-bar']) //ngRoute is an a
             toggle: function() {
                 this.isOpen = !this.isOpen;
                 if (this.isOpen) {
-                    $('#mobile-menu-open').css('width', $window.innerWidth - (window.innerWidth > 1000 ? 70 : 50)).css('height', $window.innerHeight - 20).children().css('opacity', 0);
+                    $('#mobile-menu-open').css('width', 'calc(100vw - 20px)').css('height', 'calc(100vh - 20px)').children().css('opacity', 0);
                 } else {
                     $timeout(function() {
                         $('#mobile-menu-open').css('height', '0').css('width', '1rem').children().css('opacity', 1);
