@@ -307,6 +307,7 @@ button#play-button {
 .menu-swoop-out {
     opacity: 0;
     transition: 0.5s;
+    display:none;
 /*     transform: translateY(-200%);
     transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); */
 }
