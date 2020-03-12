@@ -298,13 +298,17 @@ button#play-button {
 }
 
 .menu-swoop-in {
-    transform: translateY(0);
-    transition: all 1.0s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    opacity: 1;
+    transition: 0.5s;
+/*     transform: translateY(0); */
+/*     transition: all 1.0s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); */
 }
 
 .menu-swoop-out {
-    transform: translateY(-200%);
-    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    opacity: 0;
+    transition: 0.5s;
+/*     transform: translateY(-200%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); */
 }
 
 
